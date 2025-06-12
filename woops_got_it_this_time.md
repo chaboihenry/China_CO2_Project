@@ -1,21 +1,22 @@
 ```mermaid
 graph TD
 
-  %%── node styles ───────────────────────────
-  classDef decision fill:#B4D4FF,stroke:#333,stroke-width:1px
-  classDef leaf     fill:#DFFFD6,stroke:#333,stroke-width:1px
+%% ── colour classes ───────────────────────────
+classDef decision fill:#9EC9FF,stroke:#333,stroke-width:1px
+classDef leaf     fill:#B9F5C7,stroke:#333,stroke-width:1px
 
-  %%── the tree ──────────────────────────────
-  D["**Decision Node**\nIs GDP ≤ $6 T?"]:::decision
-  L1["**Leaf**\nŷ = 7.2 Gt"]             :::leaf
-  L2["**Leaf**\nŷ = 8.9 Gt"]             :::leaf
+%% ── one-split tree ───────────────────────────
+D["**Decision<br/>Is GDP ≤ 6 T?**"]:::decision
+L1["**Leaf<br/>ŷ = 7.2 Gt**"]        :::leaf
+L2["**Leaf<br/>ŷ = 8.9 Gt**"]        :::leaf
 
-  D -- "**Yes**" --> L1
-  D -- "**No**"  --> L2
+D -->|**Yes**| L1
+D -->|**No**|  L2
 
-  %%── legend ───────────────────────────────
-  subgraph Legend
-    direction LR
-    K1["**Decision node**<br/>(question)"]:::decision
-    K2["**Leaf node**<br/>(answer)"]      :::leaf
-  end
+%% ── legend ───────────────────────────────────
+subgraph Legend
+  direction LR
+  K1["**Decision node<br/>(question)**"]:::decision
+  K2["**Leaf node<br/>(answer)**"]      :::leaf
+end
+```
