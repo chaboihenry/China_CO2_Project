@@ -21,7 +21,7 @@ graph TD
     end
 
     %% Predictor-space partition (optional placeholder panel)
-    click A " " _blank
+    Click A" _blank
 
 %% CART with bold labels
 graph TD
