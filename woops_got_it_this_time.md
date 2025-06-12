@@ -16,6 +16,23 @@ graph TD
       B -->|Yes| D[Leaf R₂<br/>ŷ = 7.2 Gt]
       B -->|No| E[Leaf R₃<br/>ŷ = 7.8 Gt]
     end
+%% =========================
+%% (A) CART TREE STRUCTURE
+%% =========================
+graph TD
+    style A fill:#B4D4FF,stroke:#333,stroke-width:1px
+    style B fill:#B4D4FF,stroke:#333,stroke-width:1px
+    style C fill:#DFFFD6,stroke:#333,stroke-width:1px
+    style D fill:#DFFFD6,stroke:#333,stroke-width:1px
+    style E fill:#DFFFD6,stroke:#333,stroke-width:1px
+    
+    subgraph "Decision-Tree View"
+      direction TB
+      A[Root<br/>&nbsp;&nbsp;co2_lag1&nbsp;≤&nbsp;9.5&nbsp;Gt?] -->|Yes| B[Node<br/>&nbsp;&nbsp;gdp&nbsp;≤&nbsp;$6 T?]
+      A -->|No| C[Leaf R��<br/>ŷ = 8.9 Gt]
+      B -->|Yes| D[Leaf R₂<br/>ŷ = 7.2 Gt]
+      B -->|No| E[Leaf R₃<br/>ŷ = 7.8 Gt]
+    end
 
 %% ==================================
 %% (B) RECTANGULAR PARTITION VIEW
@@ -32,4 +49,3 @@ graph TD
     
     %% Invisible nodes used only for the picture layout
     N1([ ])---N2([ ])
-
