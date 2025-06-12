@@ -25,3 +25,4 @@ subgraph Legend
   L1["**Decision node<br/>(question)**"]:::split
   L2["**Leaf node<br/>(answer)**"]    :::leaf
 end
+```
