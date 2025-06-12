@@ -1,22 +1,35 @@
 ```mermaid
+%% =========================
+%% (A) CART TREE STRUCTURE
+%% =========================
 graph TD
-classDef split fill:#B4D4FF,stroke:#333,stroke-width:1px
-classDef leaf  fill:#DFFFD6,stroke:#333,stroke-width:1px
+    style A fill:#B4D4FF,stroke:#333,stroke-width:1px
+    style B fill:#B4D4FF,stroke:#333,stroke-width:1px
+    style C fill:#DFFFD6,stroke:#333,stroke-width:1px
+    style D fill:#DFFFD6,stroke:#333,stroke-width:1px
+    style E fill:#DFFFD6,stroke:#333,stroke-width:1px
+    
+    subgraph "Decision-Tree View"
+      direction TB
+      A[Root<br/>&nbsp;&nbsp;co2_lag1&nbsp;≤&nbsp;9.5&nbsp;Gt?] -->|Yes| B[Node<br/>&nbsp;&nbsp;gdp&nbsp;≤&nbsp;$6 T?]
+      A -->|No| C[Leaf R��<br/>ŷ = 8.9 Gt]
+      B -->|Yes| D[Leaf R₂<br/>ŷ = 7.2 Gt]
+      B -->|No| E[Leaf R₃<br/>ŷ = 7.8 Gt]
+    end
 
-A["**co2_lag1 ≤ 9.5 Gt?**"]:::split
-B["**gdp ≤ 6 T?**"]:::split
-C["**Leaf R₁<br/>ŷ = 8.9 Gt**"]:::leaf
-D["**Leaf R₂<br/>ŷ = 7.2 Gt**"]:::leaf
-E["**Leaf R₃<br/>ŷ = 7.8 Gt**"]:::leaf
-
-A -- "**Yes**" --> B
-A -- "**No**"  --> C
-B -- "**Yes**" --> D
-B -- "**No**"  --> E
-
-subgraph Legend
-  direction LR
-  L1["**Decision node**\n(question)"]:::split
-  L2["**Leaf node**\n(answer)"]    :::leaf
-end
+%% ==================================
+%% (B) RECTANGULAR PARTITION VIEW
+%% ==================================
+    subgraph "Predictor-Space Partition"
+      direction LR
+      AA([ ])
+    end
+    %% Draw rectangle annotations with plain HTML-like labels
+    click AA " "
+    
+    classDef region fill:#DFFFD6,stroke:#333,stroke-width:1px;
+    class C,D,E region;
+    
+    %% Invisible nodes used only for the picture layout
+    N1([ ])---N2([ ])
 
